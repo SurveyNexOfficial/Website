@@ -38,7 +38,7 @@ export default function HomePageHowItWorksSection() {
 						<div key={index} className="grid grid-rows-[auto_auto] text-center group h-full">
 							{/* Top Section */}
 							<div className="flex flex-col items-center px-4">
-								<div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-full flex items-center justify-center mb-6 text-white text-2xl font-bold shadow-xl group-hover:shadow-2xl transition-shadow">
+								<div className="w-20 h-20 bg-white text-black border border-black hover:bg-black hover:text-white rounded-full flex items-center justify-center mb-6 text-2xl font-bold shadow-xl group-hover:shadow-2xl transition-all duration-300 ease-in-out">
 									{step.step}
 								</div>
 								<h3 className="text-2xl font-bold mb-4 text-gray-900">{step.title}</h3>
@@ -47,11 +47,11 @@ export default function HomePageHowItWorksSection() {
 
 							{/* Bottom Section */}
 							<div className="space-y-3 px-4">
-								<div className="bg-blue-50 rounded-xl p-4">
-									<p className="text-blue-700 font-semibold">👤 For Users: {step.userAction}</p>
+								<div className="bg-gray-50 rounded-xl p-4">
+									<p className="text-black font-semibold">👤 For Users: {step.userAction}</p>
 								</div>
-								<div className="bg-indigo-50 rounded-xl p-4">
-									<p className="text-indigo-700 font-semibold">
+								<div className="bg-gray-100 rounded-xl p-4">
+									<p className="text-black font-semibold">
 										🏢 For Businesses: {step.businessAction}
 									</p>
 								</div>

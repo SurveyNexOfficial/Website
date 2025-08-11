@@ -23,29 +23,27 @@ const Header = () => {
 				<div className="flex justify-between items-center py-4">
 					{/* Logo */}
 					<div className="flex items-center space-x-2">
-						<div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+						<div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
 							<span className="text-white font-bold text-sm">S</span>
 						</div>
-						<span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-							SurveyNex
-						</span>
+						<span className="text-xl font-bold bg-black bg-clip-text text-transparent">SurveyNex</span>
 					</div>
 
 					{/* Desktop Navigation */}
 					<nav className="hidden md:flex items-center space-x-8">
-						<a href="#how-it-works" className="text-gray-600 hover:text-gray-900 transition-colors">
+						<a href="#how-it-works" className="text-gray-800 hover:text-black transition-colors">
 							How it Works
 						</a>
-						<a href="#for-users" className="text-gray-600 hover:text-gray-900 transition-colors">
+						<a href="#for-users" className="text-gray-800 hover:text-black transition-colors">
 							For Users
 						</a>
-						<a href="#for-businesses" className="text-gray-600 hover:text-gray-900 transition-colors">
+						<a href="#for-businesses" className="text-gray-800 hover:text-black transition-colors">
 							For Businesses
 						</a>
-						<button className="px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition-colors">
+						<button className="px-4 py-2 text-black border border-gray-300 rounded-lg hover:bg-black hover:text-white transition-colors">
 							Sign In
 						</button>
-						<button className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
+						<button className="px-4 py-2 bg-black text-white rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
 							Get Started
 						</button>
 					</nav>
@@ -65,26 +63,26 @@ const Header = () => {
 						<div className="flex flex-col space-y-4">
 							<a
 								href="#how-it-works"
-								className="text-gray-600 hover:text-gray-900 transition-colors"
+								className="text-gray-800 hover:text-black transition-colors"
 								onClick={() => setIsMenuOpen(false)}>
 								How it Works
 							</a>
 							<a
 								href="#for-users"
-								className="text-gray-600 hover:text-gray-900 transition-colors"
+								className="text-gray-800 hover:text-black transition-colors"
 								onClick={() => setIsMenuOpen(false)}>
 								For Users
 							</a>
 							<a
 								href="#for-businesses"
-								className="text-gray-600 hover:text-gray-900 transition-colors"
+								className="text-gray-800 hover:text-black transition-colors"
 								onClick={() => setIsMenuOpen(false)}>
 								For Businesses
 							</a>
-							<button className="px-4 py-2 text-blue-600 border border-blue-600 rounded-lg w-fit transition-colors hover:bg-blue-50">
+							<button className="px-4 py-2 text-black border border-gray-300 rounded-lg w-fit transition-colors hover:bg-black hover:text-white">
 								Sign In
 							</button>
-							<button className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg w-fit hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
+							<button className="px-4 py-2 bg-black text-white rounded-lg w-fit hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
 								Get Started
 							</button>
 						</div>
