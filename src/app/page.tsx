@@ -10,7 +10,7 @@ import HomePageCtaSection from "@/components/HomePage/CTA";
 
 export default function SurveyNex() {
 	return (
-		<div className="min-h-screen bg-white">
+		<div className="min-h-screen bg-white text-black">
 			<Header />
 
 			{/* Hero Section */}
