@@ -2,7 +2,7 @@
 
 import LoginForm from "@/components/LoginForm/LoginForm";
 import RegisterForm from "@/components/RegisterForm/RegisterForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type AuthMode = "login" | "register";
 
@@ -30,13 +30,21 @@ export default function LoginRegisterPage() {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
+	useEffect(() => {
+		const url = new URL(window.location.href);
+		const mode = url.searchParams.get("mode") as AuthMode | null;
+		if (mode === "login" || mode === "register") {
+			setAuthMode(mode);
+		}
+	}, []);
+
 	const changeAuthMode = (mode: AuthMode) => {
 		if (mode === authMode) return;
 		setIsTransitioning(true);
 
 		const url = new URL(window.location.href);
 		url.searchParams.set("mode", mode);
-		window.history.pushState({}, url.toString());
+		window.history.pushState({}, "", url.toString());
 
 		setTimeout(() => {
 			setAuthMode(mode);

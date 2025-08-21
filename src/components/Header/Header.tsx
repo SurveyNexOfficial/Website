@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 // import "./Header.css";
 
 const Header = () => {
@@ -22,30 +23,34 @@ const Header = () => {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex justify-between items-center py-4">
 					{/* Logo */}
-					<div className="flex items-center space-x-2">
+					<Link href="/" className="flex items-center space-x-2">
 						<div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
 							<span className="text-white font-bold text-sm">S</span>
 						</div>
 						<span className="text-xl font-bold bg-black bg-clip-text text-transparent">SurveyNex</span>
-					</div>
+					</Link>
 
 					{/* Desktop Navigation */}
 					<nav className="hidden md:flex items-center space-x-8">
 						<a href="#how-it-works" className="text-gray-800 hover:text-black transition-colors">
 							How it Works
 						</a>
-						<a href="#for-users" className="text-gray-800 hover:text-black transition-colors">
+						<Link href="/jobs" className="text-gray-800 hover:text-black transition-colors">
 							For Users
-						</a>
+						</Link>
 						<a href="#for-businesses" className="text-gray-800 hover:text-black transition-colors">
 							For Businesses
 						</a>
-						<button className="px-4 py-2 text-black border border-gray-300 rounded-lg hover:bg-black hover:text-white transition-colors">
+						<Link
+							href="/auth?mode=login"
+							className="px-4 py-2 text-black border border-gray-300 rounded-lg hover:bg-black hover:text-white transition-colors">
 							Sign In
-						</button>
-						<button className="px-4 py-2 bg-black text-white rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
+						</Link>
+						<Link
+							href="/auth?mode=register"
+							className="px-4 py-2 bg-black text-white rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
 							Get Started
-						</button>
+						</Link>
 					</nav>
 
 					{/* Mobile menu button */}
@@ -67,24 +72,28 @@ const Header = () => {
 								onClick={() => setIsMenuOpen(false)}>
 								How it Works
 							</a>
-							<a
-								href="#for-users"
+							<Link
+								href="/jobs"
 								className="text-gray-800 hover:text-black transition-colors"
 								onClick={() => setIsMenuOpen(false)}>
 								For Users
-							</a>
+							</Link>
 							<a
 								href="#for-businesses"
 								className="text-gray-800 hover:text-black transition-colors"
 								onClick={() => setIsMenuOpen(false)}>
 								For Businesses
 							</a>
-							<button className="px-4 py-2 text-black border border-gray-300 rounded-lg w-fit transition-colors hover:bg-black hover:text-white">
+							<Link
+								href="/auth?mode=login"
+								className="px-4 py-2 text-black border border-gray-300 rounded-lg w-fit transition-colors hover:bg-black hover:text-white">
 								Sign In
-							</button>
-							<button className="px-4 py-2 bg-black text-white rounded-lg w-fit hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
+							</Link>
+							<Link
+								href="/auth?mode=register"
+								className="px-4 py-2 bg-black text-white rounded-lg w-fit hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
 								Get Started
-							</button>
+							</Link>
 						</div>
 					</nav>
 				)}
