@@ -8,7 +8,7 @@ import HomePageForBusinessesSection from "@/components/HomePage/ForBusinesses";
 import HomePageTestimonialsSection from "@/components/HomePage/Testimonials";
 import HomePageCtaSection from "@/components/HomePage/CTA";
 
-export default function SurveyNex() {
+export default function HomePage() {
 	return (
 		<div className="min-h-screen bg-white text-black">
 			<Header />
