@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "@/components/Header/Header";
 import HomePageHeroSection from "@/components/HomePage/Hero";
 import HomePageTrustedBySection from "@/components/HomePage/TrustedBy";
 import HomePageHowItWorksSection from "@/components/HomePage/HowItWorks";
@@ -10,9 +9,7 @@ import HomePageCtaSection from "@/components/HomePage/CTA";
 
 export default function HomePage() {
 	return (
-		<div className="min-h-screen bg-white text-black">
-			<Header />
-
+		<>
 			{/* Hero Section */}
 			<HomePageHeroSection />
 
@@ -33,6 +30,6 @@ export default function HomePage() {
 
 			{/* Final CTA */}
 			<HomePageCtaSection />
-		</div>
+		</>
 	);
 }

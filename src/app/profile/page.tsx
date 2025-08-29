@@ -36,34 +36,30 @@ const Profile = () => {
 	};
 
 	return (
-		<div className="bg-white">
-			<Header />
-
-			<div className="max-w-7xl mx-auto pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-				<div className="border border-gray-200">
-					<div className="lg:hidden bg-white border-b border-neutral-200 p-4">
-						<div className="flex items-center justify-between">
-							<button
-								onClick={() => setIsMobileNavOpen(true)}
-								className="p-2 rounded-md hover:bg-neutral-100">
-								<Menu size={20} />
-							</button>
-						</div>
+		<div className="max-w-7xl mx-auto pb-20 px-4 sm:px-6 lg:px-8">
+			<div className="border border-gray-200">
+				<div className="lg:hidden bg-white border-b border-neutral-200 p-4">
+					<div className="flex items-center justify-between">
+						<button
+							onClick={() => setIsMobileNavOpen(true)}
+							className="p-2 rounded-md hover:bg-neutral-100">
+							<Menu size={20} />
+						</button>
 					</div>
+				</div>
 
-					<div className="flex">
-						{/* Left Navigation */}
-						<LeftNavigation
-							activeSection={activeSection}
-							setActiveSection={setActiveSection}
-							isMobileOpen={isMobileNavOpen}
-							setIsMobileOpen={setIsMobileNavOpen}
-						/>
+				<div className="flex">
+					{/* Left Navigation */}
+					<LeftNavigation
+						activeSection={activeSection}
+						setActiveSection={setActiveSection}
+						isMobileOpen={isMobileNavOpen}
+						setIsMobileOpen={setIsMobileNavOpen}
+					/>
 
-						{/* Main Content */}
-						<div className="flex-1 lg:ml-0">
-							<div className="p-4 lg:p-8">{renderContent()}</div>
-						</div>
+					{/* Main Content */}
+					<div className="flex-1 lg:ml-0">
+						<div className="p-4 lg:p-8">{renderContent()}</div>
 					</div>
 				</div>
 			</div>
