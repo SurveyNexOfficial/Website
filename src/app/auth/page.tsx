@@ -69,25 +69,9 @@ export default function LoginRegisterPage() {
 	};
 
 	return (
-		<div className="bg-gray-50 h-screen overflow-hidden flex flex-col">
-			<div className="w-full border-b border-gray-200 shadow-sm px-4 sm:px-6 lg:px-8">
-				<div className="max-w-7xl mx-auto">
-					<div className="py-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-y-2">
-						<div className="flex items-center space-x-2">
-							<div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
-								<span className="text-white font-bold text-sm">S</span>
-							</div>
-							<span className="text-xl font-bold bg-black bg-clip-text text-transparent">SurveyNex</span>
-						</div>
-						<div>
-							<span className="text-gray-700">{formatLocalDate()}</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
+		<div className="flex flex-col">
 			<div className="flex-1 flex flex-col p-4">
-				<div className="max-w-lg w-full mx-auto h-[600px] bg-white shadow-sm p-4 rounded-md flex flex-col gap-4">
+				<div className="max-w-lg w-full mx-auto bg-white shadow-sm p-4 rounded-md flex flex-col gap-4">
 					<div className="shrink-0">
 						<div className="flex bg-gray-100 p-1 rounded-xl gap-2">
 							<button
