@@ -1,0 +1,24 @@
+"use client";
+
+import SurveyPreview from "@/components/Survey/SurveyPreview";
+import { getSurveyById } from "@/utils/surveyStorage";
+import { useRouter } from "next/navigation";
+import { use } from "react";
+
+export default function SurveyFormPreviewPage({ params }: { params: Promise<{ id: string }> }) {
+	const { id } = use(params);
+	const router = useRouter();
+
+	if (!id) {
+		router.replace("/businesses");
+		return;
+	}
+
+	const survey = getSurveyById(id);
+	if (!survey) {
+		router.replace("/businesses");
+		return;
+	}
+
+	return <SurveyPreview survey={survey} />;
+}
