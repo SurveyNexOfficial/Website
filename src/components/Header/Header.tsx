@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { LogOut, Menu, User, UserCircle, X } from "lucide-react";
 import Link from "next/link";
 // import "./Header.css";
 
 const Header = () => {
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [scrollY, setScrollY] = useState(0);
 
@@ -32,25 +33,48 @@ const Header = () => {
 
 					{/* Desktop Navigation */}
 					<nav className="hidden md:flex items-center space-x-8">
-						<a href="#how-it-works" className="text-gray-800 hover:text-black transition-colors">
+						<Link href="#how-it-works" className="text-gray-800 hover:text-black transition-colors">
 							How it Works
-						</a>
-						<Link href="/jobs" className="text-gray-800 hover:text-black transition-colors">
+						</Link>
+						<Link href="/formly" className="text-gray-800 hover:text-black transition-colors">
+							Formly
+						</Link>
+						<Link href="/users" className="text-gray-800 hover:text-black transition-colors">
 							For Users
 						</Link>
-						<a href="#for-businesses" className="text-gray-800 hover:text-black transition-colors">
+						<Link href="/businesses" className="text-gray-800 hover:text-black transition-colors">
 							For Businesses
-						</a>
-						<Link
-							href="/auth?mode=login"
-							className="px-4 py-2 text-black border border-gray-300 rounded-lg hover:bg-black hover:text-white transition-colors">
-							Sign In
 						</Link>
-						<Link
-							href="/auth?mode=register"
-							className="px-4 py-2 bg-black text-white rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
-							Get Started
-						</Link>
+						{isLoggedIn ? (
+							<>
+								<Link href="/profile" className="rounded-full p-2 border">
+									<User size={24} />
+								</Link>
+								<button
+									onClick={() => setIsLoggedIn(false)}
+									className="rounded-full p-2 border hover:cursor-pointer">
+									<LogOut size={24} />
+								</button>
+							</>
+						) : (
+							<>
+								<Link
+									href="/auth?mode=login"
+									className="px-4 py-2 text-black border border-gray-300 rounded-lg hover:bg-black hover:text-white transition-colors">
+									Sign In
+								</Link>
+								<Link
+									href="/auth?mode=register"
+									className="px-4 py-2 bg-black text-white rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
+									Get Started
+								</Link>
+								<button
+									className="px-2 py-1 text-xs bg-black text-white rounded-lg border-black border hover:cursor-pointer"
+									onClick={() => setIsLoggedIn(true)}>
+									Dummy Login
+								</button>
+							</>
+						)}
 					</nav>
 
 					{/* Mobile menu button */}
@@ -66,34 +90,62 @@ const Header = () => {
 				{isMenuOpen && (
 					<nav className="md:hidden bg-white border-t py-4">
 						<div className="flex flex-col space-y-4">
-							<a
+							<Link
 								href="#how-it-works"
 								className="text-gray-800 hover:text-black transition-colors"
 								onClick={() => setIsMenuOpen(false)}>
 								How it Works
-							</a>
+							</Link>
 							<Link
-								href="/jobs"
+								href="/formly"
+								className="text-gray-800 hover:text-black transition-colors"
+								onClick={() => setIsMenuOpen(false)}>
+								Formly
+							</Link>
+							<Link
+								href="/users"
 								className="text-gray-800 hover:text-black transition-colors"
 								onClick={() => setIsMenuOpen(false)}>
 								For Users
 							</Link>
-							<a
-								href="#for-businesses"
+							<Link
+								href="/businesses"
 								className="text-gray-800 hover:text-black transition-colors"
 								onClick={() => setIsMenuOpen(false)}>
 								For Businesses
-							</a>
-							<Link
-								href="/auth?mode=login"
-								className="px-4 py-2 text-black border border-gray-300 rounded-lg w-fit transition-colors hover:bg-black hover:text-white">
-								Sign In
 							</Link>
-							<Link
-								href="/auth?mode=register"
-								className="px-4 py-2 bg-black text-white rounded-lg w-fit hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
-								Get Started
-							</Link>
+							{isLoggedIn ? (
+								<>
+									<Link href="/profile" className="text-gray-800 hover:text-black transition-colors">
+										Profile
+									</Link>
+									<Link
+										href="#"
+										onClick={() => setIsLoggedIn(false)}
+										className="text-gray-800 hover:text-black transition-colors">
+										Logout
+									</Link>
+								</>
+							) : (
+								<>
+									<Link
+										href="/auth?mode=login"
+										className="px-4 py-2 text-black border border-gray-300 rounded-lg w-fit transition-colors hover:bg-black hover:text-white">
+										Sign In
+									</Link>
+									<Link
+										href="/auth?mode=register"
+										className="px-4 py-2 bg-black text-white rounded-lg w-fit hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
+										Get Started
+									</Link>
+									<Link
+										href="#"
+										className="px-4 py-2 text-black border border-gray-300 rounded-lg w-fit transition-colors hover:bg-black hover:text-white"
+										onClick={() => setIsLoggedIn(true)}>
+										Dummy Login
+									</Link>
+								</>
+							)}
 						</div>
 					</nav>
 				)}
