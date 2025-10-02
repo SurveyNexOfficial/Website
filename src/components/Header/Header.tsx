@@ -33,8 +33,8 @@ const Header = () => {
 
 					{/* Desktop Navigation */}
 					<nav className="hidden md:flex items-center space-x-8">
-						<Link href="#how-it-works" className="text-gray-800 hover:text-black transition-colors">
-							How it Works
+						<Link href="/" className="text-gray-800 hover:text-black transition-colors">
+							Home
 						</Link>
 						<Link href="/formly" className="text-gray-800 hover:text-black transition-colors">
 							Formly
@@ -91,10 +91,10 @@ const Header = () => {
 					<nav className="md:hidden bg-white border-t py-4">
 						<div className="flex flex-col space-y-4">
 							<Link
-								href="#how-it-works"
+								href="/"
 								className="text-gray-800 hover:text-black transition-colors"
 								onClick={() => setIsMenuOpen(false)}>
-								How it Works
+								Home
 							</Link>
 							<Link
 								href="/formly"
