@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { MoreVertical, Plus, Search, Eye, Edit, Trash2 } from "lucide-react";
+import { MoreVertical, Plus, Search, Edit, Trash2, FileText } from "lucide-react";
 import { format } from "date-fns";
 import { Survey } from "../../types/survey";
 import { getSurveys, deleteSurvey } from "../../utils/surveyStorage";
@@ -104,10 +104,12 @@ export default function SurveyList() {
 
 									{activeDropdown === survey.id && (
 										<div className="absolute right-0 top-8 bg-white border border-gray-200 rounded-lg shadow-lg z-[999999] min-w-[120px]">
-											<button className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 text-sm">
-												<Eye size={14} />
-												View
-											</button>
+											<Link
+												href={`/businesses/${survey.id}/responses`}
+												className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 text-sm">
+												<FileText size={14} />
+												Responses
+											</Link>
 											<Link
 												href={`/businesses/${survey.id}/edit`}
 												className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 text-sm">

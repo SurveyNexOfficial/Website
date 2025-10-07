@@ -25,9 +25,26 @@ export interface Form {
 	};
 }
 
+// export interface FormResponse {
+// 	id: string;
+// 	formId: string;
+// 	responses: Record<string, string | string[]>;
+// 	submittedAt: string;
+// }
+
 export interface FormResponse {
 	id: string;
 	formId: string;
-	responses: Record<string, string | string[]>;
 	submittedAt: string;
+	respondentEmail?: string;
+}
+
+export interface QuestionResponse {
+	responseId: string;
+	elementId: string;
+	value: string | string[];
+}
+
+export interface ResponseWithAnswers extends FormResponse {
+	answers: QuestionResponse[];
 }

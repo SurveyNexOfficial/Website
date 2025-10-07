@@ -378,6 +378,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 												type="checkbox"
 												className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
 												onChange={(e) => {
+													setValue(`questions.${questionIndex}.allowMedia`, e.target.checked);
 													if (!e.target.checked) {
 														setValue(`questions.${questionIndex}.allowedMediaTypes`, []);
 														setValue(`questions.${questionIndex}.maxMediaFiles`, 1);
