@@ -10,7 +10,7 @@ interface PropertiesPanelProps {
 export default function PropertiesPanel({ element, onUpdateElement }: PropertiesPanelProps) {
 	if (!element) {
 		return (
-			<div className="bg-white rounded-lg border border-gray-200 p-4">
+			<div className="bg-white rounded-sm border border-gray-200 p-4">
 				<div className="text-center py-8">
 					<svg
 						className="w-12 h-12 mx-auto mb-4 text-gray-400"
@@ -58,7 +58,7 @@ export default function PropertiesPanel({ element, onUpdateElement }: Properties
 	};
 
 	return (
-		<div className="bg-white rounded-lg border border-gray-200 p-4">
+		<div className="bg-white rounded-sm border border-gray-200 p-4">
 			<h3 className="font-medium mb-4">Properties</h3>
 
 			<div className="space-y-4">
@@ -69,7 +69,7 @@ export default function PropertiesPanel({ element, onUpdateElement }: Properties
 						type="text"
 						value={element.label}
 						onChange={(e) => onUpdateElement(element.id, { label: e.target.value })}
-						className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+						className="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
 					/>
 				</div>
 
@@ -85,7 +85,7 @@ export default function PropertiesPanel({ element, onUpdateElement }: Properties
 							type="text"
 							value={element.placeholder || ""}
 							onChange={(e) => onUpdateElement(element.id, { placeholder: e.target.value })}
-							className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+							className="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
 						/>
 					</div>
 				)}
@@ -115,7 +115,7 @@ export default function PropertiesPanel({ element, onUpdateElement }: Properties
 										type="text"
 										value={option}
 										onChange={(e) => handleOptionChange(index, e.target.value)}
-										className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+										className="flex-1 px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
 									/>
 									<button
 										onClick={() => removeOption(index)}
@@ -134,7 +134,7 @@ export default function PropertiesPanel({ element, onUpdateElement }: Properties
 							))}
 							<button
 								onClick={addOption}
-								className="w-full px-3 py-2 border-2 border-dashed border-gray-300 rounded-lg hover:border-gray-400 transition-colors text-sm text-gray-600">
+								className="w-full px-3 py-2 border-2 border-dashed border-gray-300 rounded-sm hover:border-gray-400 transition-colors text-sm text-gray-600">
 								+ Add option
 							</button>
 						</div>

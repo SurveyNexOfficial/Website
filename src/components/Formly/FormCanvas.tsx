@@ -39,7 +39,7 @@ export default function FormCanvas({
 
 	if (elements.length === 0) {
 		return (
-			<div className="bg-white rounded-lg border-2 border-dashed border-gray-300 p-12 text-center">
+			<div className="bg-white rounded-sm border-2 border-dashed border-gray-300 p-12 text-center">
 				<div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
 					<svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path
@@ -57,7 +57,7 @@ export default function FormCanvas({
 	}
 
 	return (
-		<div className="bg-white rounded-lg border border-gray-200 p-6">
+		<div className="bg-white rounded-sm border border-gray-200 p-6">
 			<div className="space-y-4">
 				{elements.map((element, index) => (
 					<div
@@ -67,7 +67,7 @@ export default function FormCanvas({
 						onDragOver={(e) => handleDragOver(e, index)}
 						onDragEnd={handleDragEnd}
 						onClick={() => onSelectElement(element.id)}
-						className={`p-4 border rounded-lg cursor-pointer transition-colors relative group ${
+						className={`p-4 border rounded-sm cursor-pointer transition-colors relative group ${
 							selectedElementId === element.id
 								? "border-black bg-gray-50"
 								: "border-gray-200 hover:border-gray-300"
@@ -114,7 +114,7 @@ function ElementPreview({ element }: { element: FormElement }) {
 				<input
 					type="text"
 					placeholder={element.placeholder}
-					className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+					className="w-full px-3 py-2 border border-gray-300 rounded-sm"
 					disabled
 				/>
 			)}
@@ -123,7 +123,7 @@ function ElementPreview({ element }: { element: FormElement }) {
 				<textarea
 					placeholder={element.placeholder}
 					rows={3}
-					className="w-full px-3 py-2 border border-gray-300 rounded-lg resize-none"
+					className="w-full px-3 py-2 border border-gray-300 rounded-sm resize-none"
 					disabled
 				/>
 			)}
@@ -132,7 +132,7 @@ function ElementPreview({ element }: { element: FormElement }) {
 				<input
 					type="email"
 					placeholder={element.placeholder}
-					className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+					className="w-full px-3 py-2 border border-gray-300 rounded-sm"
 					disabled
 				/>
 			)}
@@ -141,7 +141,7 @@ function ElementPreview({ element }: { element: FormElement }) {
 				<input
 					type="number"
 					placeholder={element.placeholder}
-					className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+					className="w-full px-3 py-2 border border-gray-300 rounded-sm"
 					disabled
 				/>
 			)}
@@ -169,7 +169,7 @@ function ElementPreview({ element }: { element: FormElement }) {
 			)}
 
 			{element.type === "select" && element.options && (
-				<select className="w-full px-3 py-2 border border-gray-300 rounded-lg" disabled>
+				<select className="w-full px-3 py-2 border border-gray-300 rounded-sm" disabled>
 					<option>{element.placeholder}</option>
 					{element.options.map((option, idx) => (
 						<option key={idx}>{option}</option>

@@ -3,10 +3,21 @@
 import React, { useState } from "react";
 import { useForm, useFieldArray, Path } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Plus, Trash2, FileImage, FileVideo, Volume2, FileText, ChevronLeft, ChevronRight, Eye } from "lucide-react";
-import Link from "next/link";
+import {
+	Plus,
+	Trash2,
+	FileImage,
+	FileVideo,
+	Volume2,
+	FileText,
+	ChevronLeft,
+	ChevronRight,
+	Eye,
+	ArrowLeft,
+} from "lucide-react";
 import { Survey, SurveyFormData, Question, MediaType } from "../../types/survey";
 import { surveyFormSchema } from "../../utils/surveyValidator";
+import { useRouter } from "next/navigation";
 
 interface SurveyFormProps {
 	onSave: (data: Survey) => void;
@@ -135,14 +146,16 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 		setCurrentStep((prev) => (prev === "preview" ? "questions" : "basic"));
 	};
 
+	const router = useRouter();
+
 	return (
 		<div className="pb-16">
 			<div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<div className="flex items-center gap-4 mb-8">
-					<Link href={"/"} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-						<ChevronLeft size={20} />
-					</Link>
+					<button onClick={() => router.back()} className="p-2 bg-gray-100 rounded-sm hover:cursor-pointer">
+						<ArrowLeft className="text-gray-700" />
+					</button>
 					<div>
 						<h1 className="text-3xl font-light text-black">{survey ? "Edit Survey" : "Create Survey"}</h1>
 						<p className="text-gray-600 mt-1">
@@ -195,7 +208,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 								<input
 									{...register("name")}
 									type="text"
-									className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
+									className="w-full p-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
 									placeholder="Enter survey name"
 								/>
 								{errors.name && <p className="text-red-600 text-sm mt-1">{errors.name.message}</p>}
@@ -206,7 +219,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 								<textarea
 									{...register("description")}
 									rows={3}
-									className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent resize-none"
+									className="w-full p-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent resize-none"
 									placeholder="Enter survey description"
 								/>
 								{errors.description && (
@@ -221,7 +234,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 								<textarea
 									{...register("termsAndConditions")}
 									rows={4}
-									className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent resize-none"
+									className="w-full p-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent resize-none"
 									placeholder="Enter terms and conditions"
 								/>
 								{errors.termsAndConditions && (
@@ -235,7 +248,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 									<input
 										{...register("startDate")}
 										type="date"
-										className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
+										className="w-full p-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
 									/>
 									{errors.startDate && (
 										<p className="text-red-600 text-sm mt-1">{errors.startDate.message}</p>
@@ -247,7 +260,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 									<input
 										{...register("endDate")}
 										type="date"
-										className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
+										className="w-full p-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
 									/>
 									{errors.endDate && (
 										<p className="text-red-600 text-sm mt-1">{errors.endDate.message}</p>
@@ -265,14 +278,14 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 								<button
 									type="button"
 									onClick={addQuestion}
-									className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+									className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-sm hover:bg-gray-800 transition-colors">
 									<Plus size={16} />
 									Add Question
 								</button>
 							</div>
 
 							{fields.map((field, questionIndex) => (
-								<div key={field.id} className="border border-gray-200 rounded-lg p-6 space-y-4">
+								<div key={field.id} className="border border-gray-200 rounded-sm p-6 space-y-4">
 									<div className="flex justify-between items-center">
 										<h3 className="font-medium text-black">Question {questionIndex + 1}</h3>
 										{fields.length > 1 && (
@@ -290,7 +303,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 										<input
 											{...register(`questions.${questionIndex}.question`)}
 											type="text"
-											className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
+											className="w-full p-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
 											placeholder="Enter your question"
 										/>
 										{errors.questions?.[questionIndex]?.question && (
@@ -307,7 +320,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 											</label>
 											<select
 												{...register(`questions.${questionIndex}.responseType`)}
-												className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent">
+												className="w-full p-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent">
 												<option value="Text">Text</option>
 												<option value="Select">Select</option>
 											</select>
@@ -320,7 +333,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 												</label>
 												<select
 													{...register(`questions.${questionIndex}.selectType`)}
-													className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent">
+													className="w-full p-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent">
 													<option value="Single">Single Option</option>
 													<option value="Multi">Multi Option</option>
 												</select>
@@ -337,7 +350,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 												<button
 													type="button"
 													onClick={() => addResponseOption(questionIndex)}
-													className="px-4 py-2 bg-black/80 text-white text-sm rounded-lg cursor-pointer hover:bg-black transition-colors duration-300 ease-in-out">
+													className="px-4 py-2 bg-black/80 text-white text-sm rounded-sm cursor-pointer hover:bg-black transition-colors duration-300 ease-in-out">
 													Add Option
 												</button>
 											</div>
@@ -431,7 +444,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 														type="number"
 														min="1"
 														max="10"
-														className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
+														className="w-full p-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
 													/>
 												</div>
 											</div>
@@ -445,7 +458,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 					{/* Step 3: Preview */}
 					{currentStep === "preview" && (
 						<div className="space-y-8">
-							<div className="bg-gray-50 rounded-lg p-6">
+							<div className="bg-gray-50 rounded-sm p-6">
 								<h2 className="text-2xl font-medium text-black mb-4">{watchedForm.name}</h2>
 								<div className="space-y-4 text-sm">
 									<div>
@@ -468,7 +481,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 							<div className="space-y-4">
 								<h3 className="text-xl font-medium text-black">Questions Preview</h3>
 								{watchedForm.questions?.map((question, index) => (
-									<div key={index} className="border border-gray-200 rounded-lg p-4">
+									<div key={index} className="border border-gray-200 rounded-sm p-4">
 										<h4 className="font-medium text-black mb-2">
 											Question {index + 1}: {question.question}
 										</h4>
@@ -500,7 +513,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 								<button
 									type="button"
 									onClick={goPrev}
-									className="flex items-center gap-2 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+									className="flex items-center gap-2 px-6 py-3 border border-gray-300 text-gray-700 rounded-sm hover:bg-gray-50 transition-colors">
 									<ChevronLeft size={16} />
 									Previous
 								</button>
@@ -512,7 +525,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 								<button
 									type="button"
 									onClick={goNext}
-									className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
+									className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-sm hover:bg-gray-800 transition-colors">
 									Next
 									<ChevronRight size={16} />
 								</button>
@@ -522,7 +535,7 @@ export default function SurveyForm({ survey, onSave }: SurveyFormProps) {
 								<button
 									type="submit"
 									disabled={isSubmitting}
-									className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+									className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-sm hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
 									<Eye size={16} />
 									{isSubmitting ? "Saving..." : survey ? "Update Survey" : "Create Survey"}
 								</button>

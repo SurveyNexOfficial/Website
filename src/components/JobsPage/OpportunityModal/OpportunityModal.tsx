@@ -1,5 +1,6 @@
 import { X, Clock, Users, Calendar, DollarSign, CheckCircle } from "lucide-react";
 import { Opportunity } from "@/types/opportunity";
+import { useEffect, useRef } from "react";
 
 interface OpportunityModalProps {
 	opportunity: Opportunity;
@@ -8,13 +9,28 @@ interface OpportunityModalProps {
 }
 
 export default function OpportunityModal({ opportunity, isOpen, onClose }: OpportunityModalProps) {
+	const modalRef = useRef<HTMLDivElement | null>(null);
+	useEffect(() => {
+		function handleClickOutside(event: MouseEvent) {
+			if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+				onClose();
+			}
+		}
+		if (isOpen) {
+			document.addEventListener("mousedown", handleClickOutside);
+		} else {
+			document.removeEventListener("mousedown", handleClickOutside);
+		}
+		return () => document.removeEventListener("mousedown", handleClickOutside);
+	}, [isOpen, onClose]);
+
 	if (!isOpen) return null;
 
 	const progressPercentage = (opportunity.currentParticipants / opportunity.participantsNeeded) * 100;
 
 	return (
-		<div className="fixed inset-0 bg-black/50 bg-blur-lg flex items-center justify-center p-4 z-50">
-			<div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+		<div className="fixed inset-0 bg-black/50 bg-blur-lg flex items-center justify-center p-4 z-[1000]">
+			<div className="bg-white rounded-sm max-w-2xl w-full max-h-[90vh] overflow-y-auto" ref={modalRef}>
 				{/* Header */}
 				<div className="flex justify-between items-start p-6 border-b border-gray-200">
 					<div>
@@ -23,7 +39,9 @@ export default function OpportunityModal({ opportunity, isOpen, onClose }: Oppor
 							by <span className="font-medium text-gray-800">{opportunity.brandName}</span>
 						</p>
 					</div>
-					<button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+					<button
+						onClick={onClose}
+						className="p-2 hover:bg-gray-100 rounded-full border border-gray-300 transition-colors">
 						<X className="w-5 h-5 text-gray-400" />
 					</button>
 				</div>
@@ -31,7 +49,7 @@ export default function OpportunityModal({ opportunity, isOpen, onClose }: Oppor
 				{/* Content */}
 				<div className="p-6 space-y-6">
 					{/* Key Info Grid */}
-					<div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg">
+					<div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 bg-gray-50 rounded-sm">
 						<div className="flex items-center gap-2">
 							<DollarSign className="w-4 h-4 text-gray-600" />
 							<div>
@@ -141,10 +159,10 @@ export default function OpportunityModal({ opportunity, isOpen, onClose }: Oppor
 				<div className="flex justify-end gap-3 p-6 border-t border-gray-200 bg-gray-50">
 					<button
 						onClick={onClose}
-						className="px-4 py-2 text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+						className="px-4 py-2 text-gray-700 border border-gray-300 rounded-sm hover:bg-gray-50 transition-colors">
 						Close
 					</button>
-					<button className="px-6 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors">
+					<button className="px-6 py-2 bg-gray-900 text-white rounded-sm hover:bg-gray-800 transition-colors">
 						Apply Now
 					</button>
 				</div>

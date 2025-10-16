@@ -36,7 +36,7 @@ export default function OpportunityCard({ opportunity, onViewDetails }: Opportun
 	const progressPercentage = (opportunity.currentParticipants / opportunity.participantsNeeded) * 100;
 
 	return (
-		<div className="bg-white border border-gray-200 rounded-lg p-6 hover:border-gray-300 transition-all duration-200 hover:shadow-sm">
+		<div className="bg-white border border-gray-200 rounded-sm p-6 hover:border-gray-300 transition-all duration-200 hover:shadow-sm">
 			<div className="flex justify-between items-start mb-4 border-b pb-4 border-gray-200">
 				<div className="flex-1">
 					<h3 className="text-lg font-semibold text-gray-900 mb-1">{opportunity.name}</h3>
@@ -101,7 +101,7 @@ export default function OpportunityCard({ opportunity, onViewDetails }: Opportun
 
 				<button
 					onClick={() => onViewDetails(opportunity)}
-					className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors duration-200">
+					className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-sm hover:bg-gray-800 transition-colors duration-200">
 					View Details
 				</button>
 			</div>

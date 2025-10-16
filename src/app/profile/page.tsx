@@ -42,7 +42,7 @@ const Profile = () => {
 					<div className="flex items-center justify-between">
 						<button
 							onClick={() => setIsMobileNavOpen(true)}
-							className="p-2 rounded-md hover:bg-neutral-100">
+							className="p-2 rounded-sm hover:bg-neutral-100">
 							<Menu size={20} />
 						</button>
 					</div>

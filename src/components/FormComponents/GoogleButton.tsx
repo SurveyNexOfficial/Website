@@ -7,7 +7,7 @@ export default function GoogleButton(props: GoogleButtonProps) {
 	const { handleClick, isLoading } = props;
 	return (
 		<button
-			className="w-full py-4 px-6 rounded-2xl font-semibold text-lg transition-all duration-300 ease-in-out transform focus:outline-none focus:ring-0 disabled:cursor-not-allowed bg-white text-gray-700 border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 active:scale-[0.98] disabled:bg-gray-50 disabled:text-gray-400"
+			className="w-full py-4 px-6 rounded-sm font-semibold text-lg transition-all duration-300 ease-in-out transform focus:outline-none focus:ring-0 disabled:cursor-not-allowed bg-white text-gray-700 border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 active:scale-[0.98] disabled:bg-gray-50 disabled:text-gray-400"
 			type="button"
 			onClick={handleClick}
 			disabled={isLoading}>

@@ -18,7 +18,7 @@ const elementTypes = [
 
 export default function ToolboxPanel({ onAddElement }: ToolboxPanelProps) {
 	return (
-		<div className="bg-white rounded-lg border border-gray-200 p-4">
+		<div className="bg-white rounded-sm border border-gray-200 p-4">
 			<h3 className="font-medium mb-4">Add Elements</h3>
 
 			<div className="space-y-2">
@@ -26,7 +26,7 @@ export default function ToolboxPanel({ onAddElement }: ToolboxPanelProps) {
 					<button
 						key={type}
 						onClick={() => onAddElement(type)}
-						className="w-full flex items-center space-x-3 p-3 text-left hover:bg-gray-50 rounded-lg border border-transparent hover:border-gray-200 transition-colors">
+						className="w-full flex items-center space-x-3 p-3 text-left hover:bg-gray-50 rounded-sm border border-transparent hover:border-gray-200 transition-colors">
 						<span className="text-lg">{icon}</span>
 						<span className="text-sm font-medium">{label}</span>
 					</button>

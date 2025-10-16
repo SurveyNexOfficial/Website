@@ -1,0 +1,33 @@
+@reference "../../app/globals.css";
+
+.navItem {
+	@apply relative transition-colors text-gray-600 hover:text-black;
+}
+
+.navItem.active {
+	@apply text-black font-semibold underline underline-offset-4;
+}
+
+.navItem::before {
+	content: "";
+	width: 0px;
+	height: 1.5px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-color: black;
+	transition: width 0.3s;
+}
+
+.navItem:hover::before {
+	right: 0;
+	width: 100%;
+}
+
+.mobileNavItem {
+	@apply text-gray-600;
+}
+
+.mobileNavItem.active {
+	@apply text-black font-semibold underline underline-offset-2;
+}

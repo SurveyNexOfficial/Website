@@ -14,7 +14,7 @@ export default function Button({
 }: ButtonProps) {
 	const getButtonStyles = () => {
 		const baseStyles =
-			"w-full py-4 px-6 rounded-2xl font-semibold text-lg transition-all duration-300 ease-in-out transform focus:outline-none focus:ring-0 disabled:cursor-not-allowed";
+			"w-full py-4 px-6 rounded-sm font-semibold text-lg transition-all duration-300 ease-in-out transform focus:outline-none focus:ring-0 disabled:cursor-not-allowed";
 
 		switch (variant) {
 			case "primary":

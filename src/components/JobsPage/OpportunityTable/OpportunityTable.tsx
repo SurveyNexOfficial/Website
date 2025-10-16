@@ -88,7 +88,7 @@ export default function OpportunitiesTable({ opportunities }: OpportunitiesTable
 					<button
 						onClick={handlePrevPage}
 						disabled={currentPage === 1}
-						className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+						className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
 						<ChevronLeft className="w-4 h-4 mr-1" />
 						Previous
 					</button>
@@ -97,7 +97,7 @@ export default function OpportunitiesTable({ opportunities }: OpportunitiesTable
 						<button
 							key={pageNumber}
 							onClick={() => setCurrentPage(pageNumber)}
-							className={`px-3 py-2 text-sm font-medium rounded-md ${
+							className={`px-3 py-2 text-sm font-medium rounded-sm ${
 								currentPage === pageNumber
 									? "bg-gray-900 text-white"
 									: "text-gray-700 bg-white border border-gray-300 hover:bg-gray-50"
@@ -109,7 +109,7 @@ export default function OpportunitiesTable({ opportunities }: OpportunitiesTable
 					<button
 						onClick={handleNextPage}
 						disabled={currentPage === totalPages}
-						className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+						className="flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-sm hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
 						Next
 						<ChevronRight className="w-4 h-4 ml-1" />
 					</button>

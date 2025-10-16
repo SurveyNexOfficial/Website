@@ -43,7 +43,7 @@ const PasswordSection: React.FC = () => {
 
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 				{/* Password Form */}
-				<div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
+				<div className="bg-white border border-gray-200 rounded-sm shadow-sm p-6">
 					<h2 className="text-lg font-medium text-gray-900 mb-6">Update Password</h2>
 
 					<div className="space-y-4">
@@ -55,7 +55,7 @@ const PasswordSection: React.FC = () => {
 									type={showCurrentPassword ? "text" : "password"}
 									value={passwords.current}
 									onChange={(e) => handlePasswordChange("current", e.target.value)}
-									className="w-full rounded-lg border border-gray-300 px-3 py-2 pr-10 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-700"
+									className="w-full rounded-sm border border-gray-300 px-3 py-2 pr-10 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-700"
 									placeholder="Enter current password"
 								/>
 								<button
@@ -75,7 +75,7 @@ const PasswordSection: React.FC = () => {
 									type={showNewPassword ? "text" : "password"}
 									value={passwords.new}
 									onChange={(e) => handlePasswordChange("new", e.target.value)}
-									className="w-full rounded-lg border border-gray-300 px-3 py-2 pr-10 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-700"
+									className="w-full rounded-sm border border-gray-300 px-3 py-2 pr-10 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-700"
 									placeholder="Enter new password"
 								/>
 								<button
@@ -95,7 +95,7 @@ const PasswordSection: React.FC = () => {
 									type={showConfirmPassword ? "text" : "password"}
 									value={passwords.confirm}
 									onChange={(e) => handlePasswordChange("confirm", e.target.value)}
-									className="w-full rounded-lg border border-gray-300 px-3 py-2 pr-10 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-700"
+									className="w-full rounded-sm border border-gray-300 px-3 py-2 pr-10 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-700"
 									placeholder="Confirm new password"
 								/>
 								<button
@@ -108,7 +108,7 @@ const PasswordSection: React.FC = () => {
 						</div>
 
 						<button
-							className={`w-full rounded-lg px-4 py-2 text-sm font-medium transition-colors shadow-sm
+							className={`w-full rounded-sm px-4 py-2 text-sm font-medium transition-colors shadow-sm
 								${isFormValid ? "bg-gray-900 text-white hover:bg-gray-800" : "bg-gray-200 text-gray-500 cursor-not-allowed"}
 							`}
 							onClick={() => console.log("Password update triggered")}
@@ -119,7 +119,7 @@ const PasswordSection: React.FC = () => {
 				</div>
 
 				{/* Password Requirements */}
-				<div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
+				<div className="bg-white border border-gray-200 rounded-sm shadow-sm p-6">
 					<h2 className="text-lg font-medium text-gray-900 mb-4">Password Requirements</h2>
 					<div className="space-y-3">
 						{[

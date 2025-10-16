@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Form } from "@/types/form";
 import FormPreview from "@/components/Formly/FormPreview";
 import { getForm } from "@/utils/storage";
+import { ArrowLeft } from "lucide-react";
 
 interface PreviewPageProps {
 	params: Promise<{
@@ -42,23 +43,16 @@ export default function PreviewPage({ params }: PreviewPageProps) {
 	}
 
 	return (
-		<div className="min-h-screen bg-gray-50">
+		<>
 			{/* Header */}
 			<div className="bg-white border-b border-gray-200">
-				<div className="max-w-4xl mx-auto px-6 py-4">
+				<div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-4">
 					<div className="flex items-center justify-between">
 						<div className="flex items-center space-x-4">
 							<button
-								onClick={() => router.push(`/formly/${form.id}/edit`)}
-								className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-								<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth={2}
-										d="M15 19l-7-7 7-7"
-									/>
-								</svg>
+								onClick={() => router.back()}
+								className="p-2 bg-gray-100 rounded-sm hover:cursor-pointer">
+								<ArrowLeft className="text-gray-700" />
 							</button>
 
 							<div>
@@ -70,7 +64,7 @@ export default function PreviewPage({ params }: PreviewPageProps) {
 						<div className="flex items-center space-x-3">
 							<button
 								onClick={() => router.push(`/formly/${form.id}/edit`)}
-								className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+								className="px-4 py-2 border border-gray-300 rounded-sm hover:bg-gray-50 transition-colors">
 								Edit Form
 							</button>
 
@@ -81,7 +75,7 @@ export default function PreviewPage({ params }: PreviewPageProps) {
 									navigator.clipboard.writeText(url);
 									alert("Form URL copied to clipboard!");
 								}}
-								className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
+								className="px-4 py-2 bg-black text-white rounded-sm hover:bg-gray-800 transition-colors">
 								Share
 							</button>
 						</div>
@@ -90,9 +84,9 @@ export default function PreviewPage({ params }: PreviewPageProps) {
 			</div>
 
 			{/* Preview Content */}
-			<div className="max-w-2xl mx-auto px-6 py-12">
+			<div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
 				<FormPreview form={form} />
 			</div>
-		</div>
+		</>
 	);
 }

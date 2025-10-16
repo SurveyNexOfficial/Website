@@ -4,13 +4,14 @@ import React, { useState } from "react";
 import { ChevronDown, ChevronUp, ArrowLeft, FileImage, FileVideo, Volume2, FileText } from "lucide-react";
 import { format } from "date-fns";
 import { Survey, MediaType } from "../../types/survey";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface SurveyPreviewProps {
 	survey: Survey;
 }
 
 export default function SurveyPreview({ survey }: SurveyPreviewProps) {
+	const router = useRouter();
 	const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set());
 
 	const toggleQuestion = (questionId: string) => {
@@ -41,14 +42,14 @@ export default function SurveyPreview({ survey }: SurveyPreviewProps) {
 			<div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<div className="flex items-center gap-4 mb-8">
-					<Link href={"/businesses"} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-						<ArrowLeft size={20} />
-					</Link>
+					<button onClick={() => router.back()} className="p-2 bg-gray-100 rounded-sm hover:cursor-pointer">
+						<ArrowLeft className="text-gray-700" />
+					</button>
 					<h1 className="text-3xl font-light text-black">Survey Preview</h1>
 				</div>
 
 				{/* Survey Info */}
-				<div className="bg-gray-50 rounded-lg p-6 mb-8">
+				<div className="bg-gray-50 rounded-sm p-6 mb-8">
 					<h2 className="text-2xl font-medium text-black mb-4">{survey.name}</h2>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 						<div>
@@ -83,7 +84,7 @@ export default function SurveyPreview({ survey }: SurveyPreviewProps) {
 				<div className="space-y-4">
 					<h3 className="text-xl font-medium text-black mb-4">Questions</h3>
 					{survey.questions.map((question, index) => (
-						<div key={question.id} className="border border-gray-200 rounded-lg">
+						<div key={question.id} className="border border-gray-200 rounded-sm">
 							{/* Question Header */}
 							<button
 								onClick={() => toggleQuestion(question.id)}

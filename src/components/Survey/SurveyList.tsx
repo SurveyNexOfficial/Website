@@ -54,7 +54,7 @@ export default function SurveyList() {
 				</div>
 				<Link
 					href="/businesses/new"
-					className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+					className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-sm hover:bg-gray-800 transition-colors">
 					<Plus size={20} />
 					Create Survey
 				</Link>
@@ -68,7 +68,7 @@ export default function SurveyList() {
 					placeholder="Search surveys..."
 					value={searchTerm}
 					onChange={(e) => setSearchTerm(e.target.value)}
-					className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
+					className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
 				/>
 			</div>
 
@@ -78,7 +78,7 @@ export default function SurveyList() {
 					<p className="text-gray-500 text-lg">No surveys found</p>
 					<Link
 						href="/businesses/new"
-						className="px-4 py-2 bg-black text-white rounded-lg flex items-center gap-2 justify-center">
+						className="px-4 py-2 bg-black text-white rounded-sm flex items-center gap-2 justify-center">
 						<Plus size={20} />
 						Create your first survey
 					</Link>
@@ -88,7 +88,7 @@ export default function SurveyList() {
 					{filteredSurveys.map((survey) => (
 						<div
 							key={survey.id}
-							className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+							className="bg-white border border-gray-200 rounded-sm p-6 hover:shadow-lg transition-shadow">
 							{/* Card Header */}
 							<div className="flex justify-between items-start mb-4">
 								<h3 className="font-medium text-black text-lg truncate flex-1">{survey.name}</h3>
@@ -103,7 +103,7 @@ export default function SurveyList() {
 									</button>
 
 									{activeDropdown === survey.id && (
-										<div className="absolute right-0 top-8 bg-white border border-gray-200 rounded-lg shadow-lg z-[999999] min-w-[120px]">
+										<div className="absolute right-0 top-8 bg-white border border-gray-200 rounded-sm shadow-lg z-[999999] min-w-[120px]">
 											<Link
 												href={`/businesses/${survey.id}/responses`}
 												className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 text-sm">
@@ -143,7 +143,7 @@ export default function SurveyList() {
 								{/* Preview Button */}
 								<Link
 									href={`businesses/${survey.id}/preview`}
-									className="w-full flex-1 py-2 text-center border border-black text-black hover:bg-black hover:text-white transition-colors rounded-lg">
+									className="w-full flex-1 py-2 text-center border border-black text-black hover:bg-black hover:text-white transition-colors rounded-sm">
 									Preview Survey
 								</Link>
 							</div>

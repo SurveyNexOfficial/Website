@@ -61,7 +61,7 @@ export default function FormPreview({ form }: FormPreviewProps) {
 
 	if (submitted) {
 		return (
-			<div className="bg-white rounded-lg p-12 text-center border border-gray-200">
+			<div className="bg-white rounded-sm p-12 text-center border border-gray-200">
 				<div className="w-16 h-16 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center">
 					<svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -83,7 +83,7 @@ export default function FormPreview({ form }: FormPreviewProps) {
 	}
 
 	return (
-		<div className="bg-white rounded-lg border border-gray-200">
+		<div className="bg-white rounded-sm border border-gray-200">
 			{/* Form Header */}
 			<div className="p-8 border-b border-gray-200">
 				<h1 className="text-3xl font-light mb-2">{form.title}</h1>
@@ -128,7 +128,7 @@ export default function FormPreview({ form }: FormPreviewProps) {
 							<button
 								type="button"
 								onClick={handlePrevious}
-								className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+								className="px-6 py-2 border border-gray-300 rounded-sm hover:bg-gray-50 transition-colors">
 								Previous
 							</button>
 						)}
@@ -139,13 +139,13 @@ export default function FormPreview({ form }: FormPreviewProps) {
 							<button
 								type="button"
 								onClick={handleNext}
-								className="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
+								className="px-6 py-2 bg-black text-white rounded-sm hover:bg-gray-800 transition-colors">
 								Next
 							</button>
 						) : (
 							<button
 								type="submit"
-								className="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
+								className="px-6 py-2 bg-black text-white rounded-sm hover:bg-gray-800 transition-colors">
 								Submit
 							</button>
 						)}
@@ -187,7 +187,7 @@ function FormField({ element, value, onChange }: FormFieldProps) {
 					onChange={(e) => onChange(e.target.value)}
 					placeholder={element.placeholder}
 					required={element.required}
-					className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent text-lg"
+					className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent text-lg"
 				/>
 			)}
 
@@ -198,7 +198,7 @@ function FormField({ element, value, onChange }: FormFieldProps) {
 					placeholder={element.placeholder}
 					required={element.required}
 					rows={4}
-					className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none text-lg"
+					className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none text-lg"
 				/>
 			)}
 
@@ -209,7 +209,7 @@ function FormField({ element, value, onChange }: FormFieldProps) {
 					onChange={(e) => onChange(e.target.value)}
 					placeholder={element.placeholder}
 					required={element.required}
-					className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent text-lg"
+					className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent text-lg"
 				/>
 			)}
 
@@ -220,7 +220,7 @@ function FormField({ element, value, onChange }: FormFieldProps) {
 					onChange={(e) => onChange(e.target.value)}
 					placeholder={element.placeholder}
 					required={element.required}
-					className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent text-lg"
+					className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent text-lg"
 				/>
 			)}
 
@@ -264,7 +264,7 @@ function FormField({ element, value, onChange }: FormFieldProps) {
 					value={value as string}
 					onChange={(e) => onChange(e.target.value)}
 					required={element.required}
-					className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent text-lg">
+					className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent text-lg">
 					<option value="">{element.placeholder}</option>
 					{element.options.map((option, idx) => (
 						<option key={idx} value={option}>

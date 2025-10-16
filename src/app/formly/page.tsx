@@ -49,7 +49,7 @@ export default function FormListings() {
 						placeholder="Search forms..."
 						value={searchTerm}
 						onChange={(e) => setSearchTerm(e.target.value)}
-						className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
+						className="w-full px-4 py-2 border border-gray-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
 					/>
 				</div>
 
@@ -64,7 +64,7 @@ export default function FormListings() {
 						</div>
 						<Link
 							href="/formly/new"
-							className="max-w-sm w-full text-center mx-auto bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+							className="max-w-sm w-full text-center mx-auto bg-black text-white px-4 py-2 rounded-sm hover:bg-gray-800 transition-colors">
 							Create Form
 						</Link>
 					</div>
@@ -75,7 +75,7 @@ export default function FormListings() {
 						{filteredForms.map((form) => (
 							<div
 								key={form.id}
-								className="bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow group">
+								className="bg-white border border-gray-200 rounded-sm hover:shadow-md transition-shadow group">
 								<div className="flex flex-col gap-4 p-4">
 									<div className="flex items-center justify-between">
 										<h3 className="text-lg font-medium text-black group-hover:text-gray-700 line-clamp-2">
@@ -92,19 +92,19 @@ export default function FormListings() {
 									<div className="flex items-center gap-2">
 										<Link
 											href={`/formly/${form.id}/edit`}
-											className="flex-1 text-center px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
+											className="flex-1 text-center px-4 py-2 border border-gray-200 rounded-sm hover:bg-gray-50 transition-colors text-sm font-medium">
 											Edit
 										</Link>
 
 										<Link
 											href={`/formly/${form.id}/preview`}
-											className="flex-1 text-center px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium">
+											className="flex-1 text-center px-4 py-2 bg-black text-white rounded-sm hover:bg-gray-800 transition-colors text-sm font-medium">
 											Preview
 										</Link>
 
 										<button
 											onClick={() => handleDelete(form.id)}
-											className="p-2 bg-red-100 text-red-600 hover:bg-red-50 rounded-lg transition-colors text-sm font-medium">
+											className="p-2 bg-red-100 text-red-600 hover:bg-red-50 rounded-sm transition-colors text-sm font-medium">
 											<Trash2 size={20} />
 										</button>
 									</div>

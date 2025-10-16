@@ -1,6 +1,7 @@
 "use client";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 export default function HomePageHeroSection() {
 	const stats = [
@@ -16,77 +17,106 @@ export default function HomePageHeroSection() {
 		<section className="pb-20 px-4 sm:px-6 lg:px-8 bg-white">
 			<div className="max-w-7xl mx-auto">
 				<div className="text-center mb-16">
-					<h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-						Your Opinion <span className="bg-gray-500 bg-clip-text text-transparent">Has Value</span>
-					</h1>
-					<p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+					<motion.h1
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6, delay: 0.6 }}
+						className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+						Your Opinion <span className="text-gray-500">Has Value</span>
+					</motion.h1>
+
+					<motion.p
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6, delay: 0.8 }}
+						className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
 						The trusted platform where <strong>people earn real money</strong> for sharing opinions and{" "}
 						<strong>businesses get quality data</strong> they can trust.
-					</p>
+					</motion.p>
 
 					{/* Tab Switcher */}
-					<div className="inline-flex bg-white rounded-2xl p-2 shadow-xl mb-8 border">
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6, delay: 1.0 }}
+						className="inline-flex sm:flex-row flex-col gap-4 p-2 shadow-sm mb-8 rounded-sm">
 						<button
 							onClick={() => setActiveTab("users")}
-							className={`px-8 py-4 rounded-xl font-semibold transition-all ${
+							className={`px-8 py-4 font-semibold transition-all rounded-sm ${
 								activeTab === "users"
-									? "bg-white text-black shadow-lg"
+									? "bg-white text-black shadow-sm shadow-gray-500"
 									: "text-gray-600 hover:text-black"
 							}`}>
 							💰 I Want to Earn Money
 						</button>
 						<button
 							onClick={() => setActiveTab("businesses")}
-							className={`px-8 py-4 rounded-xl font-semibold transition-all ${
+							className={`px-8 py-4 font-semibold transition-all rounded-sm ${
 								activeTab === "businesses"
-									? "bg-white text-black shadow-lg"
+									? "bg-white text-black shadow-sm shadow-gray-500"
 									: "text-gray-600 hover:text-black"
 							}`}>
 							📊 I Need Survey Data
 						</button>
-					</div>
+					</motion.div>
 
 					{/* Dynamic CTAs based on active tab */}
-					<div className="space-y-6">
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6, delay: 1.2 }}
+						className="space-y-6">
 						{activeTab === "users" ? (
 							<div className="space-y-4">
-								<button className="px-12 py-5 bg-black text-white text-xl font-bold rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all">
+								<motion.button
+									whileHover={{ scale: 1.02, y: -2 }}
+									whileTap={{ scale: 0.98 }}
+									className="px-12 py-5 bg-black rounded-sm text-white text-xl font-bold hover:shadow-2xl transition-shadow">
 									<span>Start Earning Today - Its Free</span>
 									<ArrowRight className="w-6 h-6 inline-block ml-3" />
-								</button>
+								</motion.button>
 								<p className="text-gray-600">
-									<span className="font-semibold">$5 Welcome Bonus</span> • No credit
-									card required • Instant payouts
+									<span className="font-semibold">$5 Welcome Bonus</span> • No credit card required •
+									Instant payouts
 								</p>
 							</div>
 						) : (
 							<div className="space-y-4">
-								<button className="px-12 py-5 bg-black text-white text-xl font-bold rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all">
+								<motion.button
+									whileHover={{ scale: 1.02, y: -2 }}
+									whileTap={{ scale: 0.98 }}
+									className="px-12 py-5 bg-black rounded-sm text-white text-xl font-bold hover:shadow-2xl transition-shadow">
 									Launch Your First Survey
 									<ArrowRight className="w-6 h-6 inline-block ml-3" />
-								</button>
+								</motion.button>
 								<p className="text-gray-600">
 									<span className="font-semibold text-black">Free Trial</span> • 100 responses
 									included • Setup in minutes
 								</p>
 							</div>
 						)}
-					</div>
+					</motion.div>
 				</div>
 
 				{/* Stats */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+				<motion.div
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6, delay: 1.4 }}
+					className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 					{stats.map((stat, index) => (
-						<div
+						<motion.div
 							key={index}
-							className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-							<div className="text-3xl md:text-4xl font-bold bg-black bg-clip-text text-transparent mb-2">
-								{stat.number}
-							</div>
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.4, delay: 1.5 + index * 0.1 }}
+							whileHover={{ scale: 1.05 }}
+							className="text-center bg-white border border-gray-200 p-8 shadow-md hover:shadow-xl transition-shadow rounded-sm">
+							<div className="text-3xl md:text-4xl font-bold text-black mb-2">{stat.number}</div>
 							<div className="text-gray-600 font-medium">{stat.label}</div>
-						</div>
+						</motion.div>
 					))}
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);

@@ -38,7 +38,7 @@ const LeftNavigation = ({ activeSection, setActiveSection, isMobileOpen, setIsMo
 				{/* Mobile Header */}
 				<div className="flex items-center justify-between p-4 lg:hidden border-b border-neutral-200">
 					<h2 className="text-lg font-semibold text-neutral-900">Menu</h2>
-					<button onClick={() => setIsMobileOpen(false)} className="p-2 rounded-md hover:bg-neutral-100">
+					<button onClick={() => setIsMobileOpen(false)} className="p-2 rounded-sm hover:bg-neutral-100">
 						<X size={20} />
 					</button>
 				</div>
@@ -56,7 +56,7 @@ const LeftNavigation = ({ activeSection, setActiveSection, isMobileOpen, setIsMo
 										setIsMobileOpen(false);
 									}}
 									className={`
-                    w-full flex items-center px-3 py-2.5 text-sm font-medium rounded-md transition-colors
+                    w-full flex items-center px-3 py-2.5 text-sm font-medium rounded-sm transition-colors
                     ${activeSection === item.id ? "bg-neutral-900 text-white" : "text-neutral-700 hover:bg-neutral-100"}
                   `}>
 									<Icon size={18} className="mr-3 flex-shrink-0" />

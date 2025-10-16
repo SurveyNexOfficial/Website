@@ -108,8 +108,8 @@ export default function FormBuilder({ formId }: FormBuilderProps) {
 					<div className="flex items-center justify-between">
 						<div className="flex items-center space-x-4">
 							<button
-								onClick={() => router.push("/formly")}
-								className="p-2 bg-gray-100 rounded-lg hover:cursor-pointer">
+								onClick={() => router.back()}
+								className="p-2 bg-gray-100 rounded-sm hover:cursor-pointer">
 								<ArrowLeft className="text-gray-700" />
 							</button>
 
@@ -141,14 +141,14 @@ export default function FormBuilder({ formId }: FormBuilderProps) {
 						<div className="flex items-center gap-x-2">
 							<button
 								onClick={() => router.push(`/formly/${form.id}/preview`)}
-								className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+								className="px-4 py-2 border border-gray-300 rounded-sm hover:bg-gray-50 transition-colors">
 								Preview
 							</button>
 
 							<button
 								onClick={handleSave}
 								disabled={!isDirty}
-								className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed">
+								className="px-4 py-2 bg-black text-white rounded-sm hover:bg-gray-800 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed">
 								{isDirty ? "Save" : "Saved"}
 							</button>
 						</div>

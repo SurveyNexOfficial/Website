@@ -36,7 +36,7 @@ const MyOpportunitiesSection = () => {
 			<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
 				<h1 className="text-2xl font-bold text-neutral-900">My Opportunities</h1>
 				<div className="flex gap-2">
-					<select className="px-3 py-2 border border-neutral-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900">
+					<select className="px-3 py-2 border border-neutral-300 rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-neutral-900">
 						<option>All Status</option>
 						<option>Active</option>
 						<option>Completed</option>
@@ -47,7 +47,7 @@ const MyOpportunitiesSection = () => {
 
 			<div className="space-y-4">
 				{opportunities.map((opportunity) => (
-					<div key={opportunity.id} className="bg-white rounded-lg border border-neutral-200 p-6">
+					<div key={opportunity.id} className="bg-white rounded-sm border border-neutral-200 p-6">
 						<div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
 							<div className="flex-1">
 								<div className="flex items-start justify-between mb-2">
@@ -81,12 +81,12 @@ const MyOpportunitiesSection = () => {
 							</div>
 							<div className="flex gap-2">
 								{opportunity.status === "active" && (
-									<button className="px-4 py-2 bg-neutral-900 text-white rounded-md hover:bg-neutral-800 transition-colors">
+									<button className="px-4 py-2 bg-neutral-900 text-white rounded-sm hover:bg-neutral-800 transition-colors">
 										Start Survey
 									</button>
 								)}
 								{opportunity.status === "completed" && (
-									<button className="px-4 py-2 border border-neutral-300 text-neutral-700 rounded-md hover:bg-neutral-50 transition-colors">
+									<button className="px-4 py-2 border border-neutral-300 text-neutral-700 rounded-sm hover:bg-neutral-50 transition-colors">
 										View Results
 									</button>
 								)}

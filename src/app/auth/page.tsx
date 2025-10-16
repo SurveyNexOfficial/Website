@@ -6,25 +6,6 @@ import { useEffect, useState } from "react";
 
 type AuthMode = "login" | "register";
 
-function formatLocalDate() {
-	const date = new Date(); // Local time from browser
-
-	const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-	const dayName = days[date.getDay()];
-
-	const day = String(date.getDate()).padStart(2, "0");
-	const month = String(date.getMonth() + 1).padStart(2, "0");
-	const year = date.getFullYear();
-
-	let hours = date.getHours();
-	const minutes = String(date.getMinutes()).padStart(2, "0");
-	const ampm = hours >= 12 ? "PM" : "AM";
-
-	hours = hours % 12 || 12; // 12-hour format
-
-	return `${dayName}, ${day}.${month}.${year}, ${hours}:${minutes} ${ampm}`;
-}
-
 export default function LoginRegisterPage() {
 	const [authMode, setAuthMode] = useState<AuthMode>("login");
 	const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -71,24 +52,24 @@ export default function LoginRegisterPage() {
 	return (
 		<div className="flex flex-col">
 			<div className="flex-1 flex flex-col p-4">
-				<div className="max-w-lg w-full mx-auto bg-white shadow-sm p-4 rounded-md flex flex-col gap-4">
+				<div className="max-w-lg w-full mx-auto bg-white shadow-sm border border-gray-100 p-4 rounded-sm flex flex-col gap-4">
 					<div className="shrink-0">
-						<div className="flex bg-gray-100 p-1 rounded-xl gap-2">
+						<div className="flex p-1 rounded-sm gap-2">
 							<button
 								onClick={() => changeAuthMode("login")}
-								className={`flex-1 px-4 py-3 rounded-lg font-semibold transition-all duration-300 ${
+								className={`flex-1 px-4 py-2 rounded-sm font-semibold transition-all duration-300 border ${
 									authMode === "login"
-										? "bg-white text-black shadow-sm"
-										: "text-gray-600 hover:text-black"
+										? "bg-white text-black shadow-md border-gray-200"
+										: "text-gray-600 hover:text-black border-gray-100"
 								}`}>
 								Login
 							</button>
 							<button
 								onClick={() => changeAuthMode("register")}
-								className={`flex-1 px-4 py-3 rounded-lg font-semibold transition-all duration-300 ${
+								className={`flex-1 px-4 py-2 rounded-sm font-semibold transition-all duration-300 border ${
 									authMode === "register"
-										? "bg-white text-black shadow-sm"
-										: "text-gray-600 hover:text-black"
+										? "bg-white text-black shadow-md border-gray-200"
+										: "text-gray-600 hover:text-black border-gray-100"
 								}`}>
 								Register
 							</button>
