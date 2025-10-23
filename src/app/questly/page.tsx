@@ -35,9 +35,9 @@ export default function FormListings() {
 		<div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
 			<div className="flex flex-col gap-5">
 				<div className="flex items-center justify-between">
-					<h3 className="font-bold text-4xl text-center">Formly</h3>
+					<h3 className="font-bold text-4xl text-center">Questly</h3>
 					<Link
-						href="/formly/new"
+						href="/questly/new"
 						className="inline-flex items-center bg-black text-white px-4 py-2 rounded-sm hover:bg-gray-800 transition-colors">
 						Create Form
 					</Link>
@@ -63,7 +63,7 @@ export default function FormListings() {
 							<p className="text-gray-600">Create your first form to get started</p>
 						</div>
 						<Link
-							href="/formly/new"
+							href="/questly/new"
 							className="max-w-sm w-full text-center mx-auto bg-black text-white px-4 py-2 rounded-sm hover:bg-gray-800 transition-colors">
 							Create Form
 						</Link>
@@ -91,13 +91,13 @@ export default function FormListings() {
 
 									<div className="flex items-center gap-2">
 										<Link
-											href={`/formly/${form.id}/edit`}
+											href={`/questly/${form.id}/edit`}
 											className="flex-1 text-center px-4 py-2 border border-gray-200 rounded-sm hover:bg-gray-50 transition-colors text-sm font-medium">
 											Edit
 										</Link>
 
 										<Link
-											href={`/formly/${form.id}/preview`}
+											href={`/questly/${form.id}/preview`}
 											className="flex-1 text-center px-4 py-2 bg-black text-white rounded-sm hover:bg-gray-800 transition-colors text-sm font-medium">
 											Preview
 										</Link>

@@ -1,12 +1,9 @@
 "use client";
 import { Star } from "lucide-react";
-import { motion } from "motion/react";
-import { useInView } from "motion/react";
 import { useRef } from "react";
 
 export default function HomePageTestimonialsSection() {
 	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true, amount: 0.2 });
 
 	const testimonials = [
 		{
@@ -30,41 +27,41 @@ export default function HomePageTestimonialsSection() {
 	];
 
 	return (
-		<section className="py-12 md:py-24 bg-gray-50" ref={ref}>
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="text-center mb-16">
-					<motion.h2
-						initial={{ opacity: 0, y: 20 }}
-						animate={isInView ? { opacity: 1, y: 0 } : {}}
-						transition={{ duration: 0.6 }}
-						className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-						What Our Users Say
-					</motion.h2>
-				</div>
+		<>
+			<section className="py-12 md:py-24 bg-neutral-50" ref={ref}>
+				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div className="text-center mb-16">
+						<h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">What Our Users Say</h2>
+					</div>
 
-				<div className="grid md:grid-cols-3 gap-8">
-					{testimonials.map((testimonial, index) => (
-						<motion.div
-							key={index}
-							initial={{ opacity: 0, y: 30 }}
-							animate={isInView ? { opacity: 1, y: 0 } : {}}
-							transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
-							whileHover={{ scale: 1.03, y: -5 }}
-							className="bg-white rounded-sm p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-							<div className="flex mb-4">
-								{[...Array(testimonial.rating)].map((_, i) => (
-									<Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-								))}
+					<div className="grid md:grid-cols-3 gap-8">
+						{testimonials.map((testimonial, index) => (
+							<div
+								key={index}
+								className="bg-white rounded-sm p-8 shadow-lg hover:shadow-xl transition-all border border-neutral-200">
+								{/* Star Rating with sequential fill */}
+								<div className="flex mb-4">
+									{[...Array(testimonial.rating)].map((_, i) => (
+										<div key={i}>
+											<Star className="w-5 h-5 text-yellow-400 fill-current" />
+										</div>
+									))}
+								</div>
+
+								{/* Quote with fade-in effect */}
+								<p className="text-neutral-700 mb-6 text-lg leading-relaxed">
+									{`"${testimonial.text}"`}
+								</p>
+
+								<div>
+									<div className="font-bold text-neutral-900">{testimonial.name}</div>
+									<div className="text-neutral-600">{testimonial.role}</div>
+								</div>
 							</div>
-							<p className="text-gray-700 mb-6 text-lg leading-relaxed">{`"${testimonial.text}"`}</p>
-							<div>
-								<div className="font-bold text-gray-900">{testimonial.name}</div>
-								<div className="text-gray-600">{testimonial.role}</div>
-							</div>
-						</motion.div>
-					))}
+						))}
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</>
 	);
 }

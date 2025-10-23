@@ -9,7 +9,7 @@ export default function NewSurveyForm() {
 	const router = useRouter();
 	const onSave = (data: Survey) => {
 		saveSurvey(data);
-		router.replace("/businesses");
+		router.replace("/collect-data");
 	};
 
 	return <SurveyForm onSave={onSave} />;

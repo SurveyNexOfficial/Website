@@ -1,8 +1,8 @@
 import { Form } from "@/types/form";
 
 export const STORAGE_KEYS = {
-	FORMS: "formly_forms",
-	RESPONSES: "formly_responses",
+	FORMS: "questly_forms",
+	RESPONSES: "questly_responses",
 } as const;
 
 export function getForms(): Form[] {

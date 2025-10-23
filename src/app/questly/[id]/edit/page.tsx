@@ -1,4 +1,4 @@
-import FormBuilder from "@/components/Formly/FormBuilder";
+import FormBuilder from "@/components/questly/FormBuilder";
 
 interface EditFormPageProps {
 	params: {

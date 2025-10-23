@@ -10,13 +10,13 @@ export default function SurveyFormPreviewPage({ params }: { params: Promise<{ id
 	const router = useRouter();
 
 	if (!id) {
-		router.replace("/businesses");
+		router.replace("/collect-data");
 		return;
 	}
 
 	const survey = getSurveyById(id);
 	if (!survey) {
-		router.replace("/businesses");
+		router.replace("/collect-data");
 		return;
 	}
 

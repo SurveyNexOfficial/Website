@@ -1,27 +1,15 @@
 @reference "../../app/globals.css";
 
+.header {
+	@apply sticky border-b border-gray-300 top-0 left-0 bg-white w-full z-[999] transition-all duration-300;
+}
+
 .navItem {
-	@apply relative transition-colors text-gray-600 hover:text-black;
+	@apply relative transition-colors text-gray-500 hover:text-black;
 }
 
 .navItem.active {
-	@apply text-black font-semibold underline underline-offset-4;
-}
-
-.navItem::before {
-	content: "";
-	width: 0px;
-	height: 1.5px;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	background-color: black;
-	transition: width 0.3s;
-}
-
-.navItem:hover::before {
-	right: 0;
-	width: 100%;
+	@apply text-black font-semibold;
 }
 
 .mobileNavItem {
@@ -29,5 +17,5 @@
 }
 
 .mobileNavItem.active {
-	@apply text-black font-semibold underline underline-offset-2;
+	@apply text-black font-semibold;
 }

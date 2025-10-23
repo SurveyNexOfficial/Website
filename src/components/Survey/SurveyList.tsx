@@ -53,7 +53,7 @@ export default function SurveyList() {
 					<p className="text-gray-600">Manage your survey forms</p>
 				</div>
 				<Link
-					href="/businesses/new"
+					href="/collect-data/new"
 					className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-sm hover:bg-gray-800 transition-colors">
 					<Plus size={20} />
 					Create Survey
@@ -77,7 +77,7 @@ export default function SurveyList() {
 				<div className="text-center py-16 flex flex-col gap-4 items-center">
 					<p className="text-gray-500 text-lg">No surveys found</p>
 					<Link
-						href="/businesses/new"
+						href="/collect-data/new"
 						className="px-4 py-2 bg-black text-white rounded-sm flex items-center gap-2 justify-center">
 						<Plus size={20} />
 						Create your first survey
@@ -105,13 +105,13 @@ export default function SurveyList() {
 									{activeDropdown === survey.id && (
 										<div className="absolute right-0 top-8 bg-white border border-gray-200 rounded-sm shadow-lg z-[999999] min-w-[120px]">
 											<Link
-												href={`/businesses/${survey.id}/responses`}
+												href={`/collect-data/${survey.id}/responses`}
 												className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 text-sm">
 												<FileText size={14} />
 												Responses
 											</Link>
 											<Link
-												href={`/businesses/${survey.id}/edit`}
+												href={`/collect-data/${survey.id}/edit`}
 												className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 text-sm">
 												<Edit size={14} />
 												Edit
@@ -142,7 +142,7 @@ export default function SurveyList() {
 							<div className="w-full flex items-center">
 								{/* Preview Button */}
 								<Link
-									href={`businesses/${survey.id}/preview`}
+									href={`/collect-data/${survey.id}/preview`}
 									className="w-full flex-1 py-2 text-center border border-black text-black hover:bg-black hover:text-white transition-colors rounded-sm">
 									Preview Survey
 								</Link>

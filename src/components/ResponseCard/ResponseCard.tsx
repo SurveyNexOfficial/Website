@@ -14,7 +14,7 @@ export default function ResponseCard({ response, formId }: ResponseCardProps) {
 
 	return (
 		<Link
-			href={`/businesses/${formId}/responses/${response.id}`}
+			href={`/collect-data/${formId}/responses/${response.id}`}
 			className="block border border-black/10 hover:border-black/30 transition-colors">
 			<div className="p-6">
 				<div className="flex items-center justify-between">

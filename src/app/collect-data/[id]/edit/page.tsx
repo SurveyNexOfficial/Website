@@ -10,19 +10,19 @@ export default function EditSurveyFormPage({ params }: { params: Promise<{ id: s
 	const router = useRouter();
 
 	if (!id) {
-		router.replace("/businesses");
+		router.replace("/collect-data");
 		return;
 	}
 
 	const survey = getSurveyById(id);
 	if (!survey) {
-		router.replace("/businesses");
+		router.replace("/collect-data");
 		return;
 	}
 
 	const onSave = (data: Survey) => {
 		saveSurvey(data);
-		router.replace("/businesses");
+		router.replace("/collect-data");
 	};
 
 	return <SurveyForm onSave={onSave} survey={survey} />;

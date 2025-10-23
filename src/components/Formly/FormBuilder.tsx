@@ -37,7 +37,7 @@ export default function FormBuilder({ formId }: FormBuilderProps) {
 			if (existingForm) {
 				setForm(existingForm);
 			} else {
-				router.push("/formly");
+				router.push("/questly");
 			}
 		}
 	}, [formId, router]);
@@ -140,7 +140,7 @@ export default function FormBuilder({ formId }: FormBuilderProps) {
 
 						<div className="flex items-center gap-x-2">
 							<button
-								onClick={() => router.push(`/formly/${form.id}/preview`)}
+								onClick={() => router.push(`/questly/${form.id}/preview`)}
 								className="px-4 py-2 border border-gray-300 rounded-sm hover:bg-gray-50 transition-colors">
 								Preview
 							</button>

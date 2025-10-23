@@ -19,7 +19,7 @@ export default async function ResponsesPage({ params }: PageProps) {
 			<div className="mb-12">
 				{/* Header */}
 				<div className="flex items-center gap-4 mb-8">
-					<Link href={"/businesses"} className="p-2 bg-gray-100 rounded-sm hover:cursor-pointer">
+					<Link href={"/collect-data"} className="p-2 bg-gray-100 rounded-sm hover:cursor-pointer">
 						<ArrowLeft className="text-gray-700" />
 					</Link>
 					<h1 className="text-4xl font-semibold text-black mb-2">{form.title}</h1>

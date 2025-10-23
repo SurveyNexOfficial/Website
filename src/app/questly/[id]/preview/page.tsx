@@ -3,7 +3,7 @@
 import { useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
 import { Form } from "@/types/form";
-import FormPreview from "@/components/Formly/FormPreview";
+import FormPreview from "@/components/questly/FormPreview";
 import { getForm } from "@/utils/storage";
 import { ArrowLeft } from "lucide-react";
 
@@ -22,7 +22,7 @@ export default function PreviewPage({ params }: PreviewPageProps) {
 	useEffect(() => {
 		const foundForm = getForm(id);
 		if (!foundForm) {
-			router.push("/formly");
+			router.push("/questly");
 			return;
 		}
 
@@ -63,7 +63,7 @@ export default function PreviewPage({ params }: PreviewPageProps) {
 
 						<div className="flex items-center space-x-3">
 							<button
-								onClick={() => router.push(`/formly/${form.id}/edit`)}
+								onClick={() => router.push(`/questly/${form.id}/edit`)}
 								className="px-4 py-2 border border-gray-300 rounded-sm hover:bg-gray-50 transition-colors">
 								Edit Form
 							</button>

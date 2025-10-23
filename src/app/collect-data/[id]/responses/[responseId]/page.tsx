@@ -31,7 +31,7 @@ export default async function ResponseDetailPage({ params }: PageProps) {
 			<div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
 				{/* Back Button */}
 				<Link
-					href={`/businesses/${formId}/responses`}
+					href={`/collect-data/${formId}/responses`}
 					className="inline-flex items-center gap-2 text-sm text-black/60 hover:text-black mb-8 transition-colors">
 					<ArrowLeft className="w-4 h-4" />
 					Back to responses
