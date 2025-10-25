@@ -35,6 +35,15 @@
 	}
 }
 
+@keyframes slide {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 450px 100px;
+	}
+}
+
 .animate-gridPulse {
 	animation: gridPulse 20s linear infinite;
 }

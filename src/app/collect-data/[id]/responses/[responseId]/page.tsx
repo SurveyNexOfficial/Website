@@ -27,8 +27,8 @@ export default async function ResponseDetailPage({ params }: PageProps) {
 	const formattedTime = format(new Date(response.submittedAt), "hh:mm a");
 
 	return (
-		<div className="pb-16">
-			<div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+		<section className="min-h-screen w-full py-10 relative bg-white">
+			<div className="max-w-7xl mx-auto w-full">
 				{/* Back Button */}
 				<Link
 					href={`/collect-data/${formId}/responses`}
@@ -69,6 +69,6 @@ export default async function ResponseDetailPage({ params }: PageProps) {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }

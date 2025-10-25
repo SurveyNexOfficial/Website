@@ -103,8 +103,8 @@ export default function FormBuilder({ formId }: FormBuilderProps) {
 	return (
 		<>
 			{/* Header */}
-			<div className="bg-white border-b border-gray-200 pb-4">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div className="bg-white border-b border-gray-200">
+				<div className="max-w-7xl mx-auto">
 					<div className="flex items-center justify-between">
 						<div className="flex items-center space-x-4">
 							<button
@@ -157,7 +157,7 @@ export default function FormBuilder({ formId }: FormBuilderProps) {
 			</div>
 
 			{/* Main Content */}
-			<div className="max-w-7xl mx-auto px-6 py-6">
+			<div className="max-w-7xl mx-auto py-6">
 				<div className="grid grid-cols-12 gap-6">
 					{/* Toolbox */}
 					<div className="col-span-3">

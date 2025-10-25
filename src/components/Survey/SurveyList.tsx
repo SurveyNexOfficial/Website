@@ -45,7 +45,7 @@ export default function SurveyList() {
 	}, []);
 
 	return (
-		<div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+		<div className="max-w-7xl mx-auto w-full">
 			{/* Header */}
 			<div className="flex justify-between items-center mb-8">
 				<div>

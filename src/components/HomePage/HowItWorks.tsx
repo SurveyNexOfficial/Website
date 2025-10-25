@@ -29,7 +29,7 @@ export default function HomePageHowItWorksSection() {
 	];
 
 	return (
-		<section className="py-16 bg-white border-y-2" ref={ref}>
+		<section className="py-16 bg-white" ref={ref}>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 				<div className="text-center flex flex-col gap-y-2">
 					<h2 className="text-3xl md:text-5xl font-bold text-neutral-900">How SurveyNex Works</h2>
@@ -45,29 +45,29 @@ export default function HomePageHowItWorksSection() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ delay: 0.2 + index * 0.2, duration: 0.5, ease: "easeOut" }}
 							key={index}
-							className="group h-full p-4 text-center rounded-sm border border-neutral-200 transition-all duration-1000 ease-in-out hover:scale-[1.03] hover:border-transparent hover:bg-gradient-to-r hover:from-zinc-500 hover:via-stone-600 hover:to-zinc-900">
+							className="group h-full p-4 text-center rounded-sm border border-neutral-200 transition-transform duration-300 ease-out hover:scale-[1.03] hover:border-transparent hover:bg-gradient-to-r hover:from-zinc-500 hover:via-stone-600 hover:to-zinc-900">
 							<div className="flex flex-col items-center gap-4">
-								<div className="w-20 h-20 bg-white text-black border-2 border-black rounded-full flex items-center justify-center text-2xl font-bold transition-colors duration-500 ease-in-out group-hover:bg-black group-hover:text-white group-hover:border-white">
+								<div className="w-20 h-20 bg-white text-black border-2 border-black rounded-full flex items-center justify-center text-2xl font-bold transition-colors duration-300 ease-in-out group-hover:bg-black group-hover:text-white group-hover:border-white">
 									{step.step}
 								</div>
 								<div>
-									<h3 className="text-2xl font-bold text-neutral-900 transition-colors duration-500 ease-in-out group-hover:text-white">
+									<h3 className="text-2xl font-bold text-neutral-900 transition-colors duration-300 ease-in-out group-hover:text-white">
 										{step.title}
 									</h3>
-									<p className="text-neutral-600 text-base transition-colors duration-500 ease-in-out group-hover:text-neutral-200">
+									<p className="text-neutral-600 text-base transition-colors duration-300 ease-in-out group-hover:text-neutral-200">
 										{step.description}
 									</p>
 								</div>
 							</div>
 
 							<div className="space-y-4 mt-4">
-								<div className="bg-neutral-50 rounded-sm p-4 border border-neutral-200 transition-colors duration-500 ease-in-out group-hover:bg-black/20 group-hover:border-white/20">
-									<p className="text-black font-semibold text-sm transition-colors duration-500 ease-in-out group-hover:text-white">
+								<div className="bg-neutral-50 rounded-sm p-4 border border-neutral-200 transition-colors duration-300 ease-in-out group-hover:bg-black/20 group-hover:border-white/20">
+									<p className="text-black font-semibold text-sm transition-colors duration-300 ease-in-out group-hover:text-white">
 										👤 For Users: {step.userAction}
 									</p>
 								</div>
-								<div className="bg-neutral-50 rounded-sm p-4 border border-neutral-300 transition-colors duration-500 ease-in-out group-hover:bg-black/20 group-hover:border-white/20">
-									<p className="text-black font-semibold text-sm transition-colors duration-500 ease-in-out group-hover:text-white">
+								<div className="bg-neutral-50 rounded-sm p-4 border border-neutral-300 transition-colors duration-300 ease-in-out group-hover:bg-black/20 group-hover:border-white/20">
+									<p className="text-black font-semibold text-sm transition-colors duration-300 ease-in-out group-hover:text-white">
 										🏢 For Businesses: {step.businessAction}
 									</p>
 								</div>

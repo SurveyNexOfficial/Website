@@ -6,30 +6,51 @@ import HomePageForUsersSection from "@/components/HomePage/ForUsers";
 import HomePageForBusinessesSection from "@/components/HomePage/ForBusinesses";
 import HomePageTestimonialsSection from "@/components/HomePage/Testimonials";
 import HomePageCtaSection from "@/components/HomePage/CTA";
+import FadeInOnScroll from "@/components/Animations/FadeInOnScroll";
 
 export default function HomePage() {
 	return (
 		<>
-			{/* Hero Section */}
-			<HomePageHeroSection />
+			<FadeInOnScroll>
+				{/* Hero Section */}
+				<HomePageHeroSection />
+				<div className="h-6 w-full border bg-[repeating-linear-gradient(-45deg,#545454_0px,#545454_0.9px,transparent_1.2px,transparent_20px)] border-b border-[#545454] outline-none animate-[slide_20s_linear_infinite]"></div>
+			</FadeInOnScroll>
 
-			{/* Trusted By Section */}
-			<HomePageTrustedBySection />
+			<FadeInOnScroll delay={0.2}>
+				{/* Trusted By Section */}
+				<HomePageTrustedBySection />
+				<div className="h-6 w-full border bg-[repeating-linear-gradient(-45deg,#545454_0px,#545454_0.9px,transparent_1.2px,transparent_20px)] border-b border-[#545454] outline-none animate-[slide_20s_linear_infinite]"></div>
+			</FadeInOnScroll>
 
-			{/* How It Works */}
-			<HomePageHowItWorksSection />
+			<FadeInOnScroll delay={0.2}>
+				{/* How It Works */}
+				<HomePageHowItWorksSection />
+				<div className="h-6 w-full border bg-[repeating-linear-gradient(-45deg,#545454_0px,#545454_0.9px,transparent_1.2px,transparent_20px)] border-b border-[#545454] outline-none animate-[slide_20s_linear_infinite]"></div>
+			</FadeInOnScroll>
 
-			{/* For Users Section */}
-			<HomePageForUsersSection />
+			<FadeInOnScroll delay={0.2}>
+				{/* For Users Section */}
+				<HomePageForUsersSection />
+				<div className="h-6 w-full border bg-[repeating-linear-gradient(-45deg,#545454_0px,#545454_0.9px,transparent_1.2px,transparent_20px)] border-b border-[#545454] outline-none animate-[slide_20s_linear_infinite]"></div>
+			</FadeInOnScroll>
 
-			{/* For Businesses Section */}
-			<HomePageForBusinessesSection />
+			<FadeInOnScroll delay={0.2}>
+				{/* For Businesses Section */}
+				<HomePageForBusinessesSection />
+				<div className="h-6 w-full border bg-[repeating-linear-gradient(-45deg,#545454_0px,#545454_0.9px,transparent_1.2px,transparent_20px)] border-b border-[#545454] outline-none animate-[slide_20s_linear_infinite]"></div>
+			</FadeInOnScroll>
 
-			{/* Testimonials */}
-			<HomePageTestimonialsSection />
+			<FadeInOnScroll delay={0.2}>
+				{/* Testimonials */}
+				<HomePageTestimonialsSection />
+				<div className="h-6 w-full border bg-[repeating-linear-gradient(-45deg,#545454_0px,#545454_0.9px,transparent_1.2px,transparent_20px)] border-b border-[#545454] outline-none animate-[slide_20s_linear_infinite]"></div>
+			</FadeInOnScroll>
 
-			{/* Final CTA */}
-			<HomePageCtaSection />
+			<FadeInOnScroll delay={0.2}>
+				{/* Final CTA */}
+				<HomePageCtaSection />
+			</FadeInOnScroll>
 		</>
 	);
 }

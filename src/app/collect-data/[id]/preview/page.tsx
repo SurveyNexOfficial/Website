@@ -20,5 +20,9 @@ export default function SurveyFormPreviewPage({ params }: { params: Promise<{ id
 		return;
 	}
 
-	return <SurveyPreview survey={survey} />;
+	return (
+		<section className="relative min-h-screen py-10 bg-white w-full">
+			<SurveyPreview survey={survey} />
+		</section>
+	);
 }

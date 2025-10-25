@@ -12,5 +12,9 @@ export default function NewSurveyForm() {
 		router.replace("/collect-data");
 	};
 
-	return <SurveyForm onSave={onSave} />;
+	return (
+		<section className="min-h-screen w-full py-10 relative bg-white">
+			<SurveyForm onSave={onSave} />
+		</section>
+	);
 }

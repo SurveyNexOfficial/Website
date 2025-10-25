@@ -1,4 +1,4 @@
-import FormBuilder from "@/components/questly/FormBuilder";
+import FormBuilder from "@/components/Questly/FormBuilder";
 
 interface EditFormPageProps {
 	params: {
@@ -7,5 +7,9 @@ interface EditFormPageProps {
 }
 
 export default function EditFormPage({ params }: EditFormPageProps) {
-	return <FormBuilder formId={params.id} />;
+	return (
+		<section className="relative min-h-screen w-full bg-white py-10">
+			<FormBuilder formId={params.id} />
+		</section>
+	);
 }

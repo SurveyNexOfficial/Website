@@ -3,7 +3,7 @@
 import { useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
 import { Form } from "@/types/form";
-import FormPreview from "@/components/questly/FormPreview";
+import FormPreview from "@/components/Questly/FormPreview";
 import { getForm } from "@/utils/storage";
 import { ArrowLeft } from "lucide-react";
 
@@ -43,10 +43,10 @@ export default function PreviewPage({ params }: PreviewPageProps) {
 	}
 
 	return (
-		<>
+		<section className="min-h-screen py-10 w-full bg-white">
 			{/* Header */}
 			<div className="bg-white border-b border-gray-200">
-				<div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-4">
+				<div className="max-w-7xl w-full mx-auto pb-4">
 					<div className="flex items-center justify-between">
 						<div className="flex items-center space-x-4">
 							<button
@@ -84,9 +84,9 @@ export default function PreviewPage({ params }: PreviewPageProps) {
 			</div>
 
 			{/* Preview Content */}
-			<div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+			<div className="max-w-7xl w-full mx-auto py-6">
 				<FormPreview form={form} />
 			</div>
-		</>
+		</section>
 	);
 }

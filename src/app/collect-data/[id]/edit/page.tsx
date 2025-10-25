@@ -25,5 +25,9 @@ export default function EditSurveyFormPage({ params }: { params: Promise<{ id: s
 		router.replace("/collect-data");
 	};
 
-	return <SurveyForm onSave={onSave} survey={survey} />;
+	return (
+		<section className="min-h-screen py-10 w-full bg-white relative">
+			<SurveyForm onSave={onSave} survey={survey} />
+		</section>
+	);
 }
