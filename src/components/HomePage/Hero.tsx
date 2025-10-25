@@ -2,6 +2,7 @@
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import ScrambleText from "../Animations/Scramble";
 
 export default function HomePageHeroSection() {
 	const stats = [
@@ -31,8 +32,17 @@ export default function HomePageHeroSection() {
 								transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
 								viewport={{ once: true }}
 								className="text-5xl md:text-7xl font-bold  leading-tight">
-								<span className="text-gray-900">Your Opinion </span>
-								<span className="">Has Value</span>
+								{/* <span className="text-gray-900">
+									Your <span className="underline underline-offset-2">Opinion</span>
+								</span>
+								<span className="">
+									<span> Has </span>
+									<span className="underline underline-offset-2">Value</span>
+								</span> */}
+								<span className="text-gray-900">Your </span>
+								<ScrambleText text="Opinion" className="underline underline-offset-2 text-gray-900" />
+								<span> Has </span>
+								<ScrambleText text="Value" className="underline underline-offset-2" />
 							</motion.h1>
 
 							<motion.p
