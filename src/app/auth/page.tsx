@@ -1,7 +1,7 @@
 "use client";
 
-import LoginForm from "@/components/LoginForm/LoginForm";
-import RegisterForm from "@/components/RegisterForm/RegisterForm";
+import LoginForm from "@/components/public/LoginForm/LoginForm";
+import RegisterForm from "@/components/public/RegisterForm/RegisterForm";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
