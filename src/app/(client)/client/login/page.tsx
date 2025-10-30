@@ -1,6 +1,5 @@
 import Link from "next/link";
 import LoginForm from "@/components/client/auth/LoginForm";
-import ClientFooter from "@/components/layout/ClientFooter";
 
 export default function ClientLoginPage() {
 	return (
@@ -22,7 +21,6 @@ export default function ClientLoginPage() {
 					</p>
 				</div>
 			</div>
-			<ClientFooter />
 		</div>
 	);
 }

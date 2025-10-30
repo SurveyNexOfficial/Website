@@ -1,15 +1,17 @@
 import FormBuilder from "@/components/public/Questly/FormBuilder";
 
 interface EditFormPageProps {
-	params: {
+	params: Promise<{
 		id: string;
-	};
+	}>;
 }
 
-export default function EditFormPage({ params }: EditFormPageProps) {
+export default async function EditFormPage({ params }: EditFormPageProps) {
+	const { id } = await params;
+
 	return (
 		<section className="relative min-h-screen w-full bg-white py-10">
-			<FormBuilder formId={params.id} />
+			<FormBuilder formId={id} />
 		</section>
 	);
 }

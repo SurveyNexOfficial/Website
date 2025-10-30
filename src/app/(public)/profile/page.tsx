@@ -8,7 +8,6 @@ import PasswordSection from "@/components/public/Profile/PasswordSection";
 import RewardsSection from "@/components/public/Profile/RewardsSection";
 import DefaultSection from "@/components/public/Profile/DefaultSection";
 import LeftNavigation from "@/components/public/Profile/Navigation";
-import Header from "@/components/public/Header/Header";
 
 const Profile = () => {
 	const [activeSection, setActiveSection] = useState("profile");

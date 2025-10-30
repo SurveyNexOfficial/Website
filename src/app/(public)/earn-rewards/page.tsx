@@ -5,7 +5,6 @@ import { Search, Filter } from "lucide-react";
 import sampleOpportunities from "@/data/opportunities";
 import OpportunitiesTable from "@/components/public/JobsPage/OpportunityTable/OpportunityTable";
 import { Opportunity } from "@/types/opportunity";
-import Header from "@/components/public/Header/Header";
 
 export default function JobsPage() {
 	const [searchTerm, setSearchTerm] = useState("");

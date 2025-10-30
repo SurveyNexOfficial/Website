@@ -35,8 +35,8 @@ export default function SurveyList() {
 	};
 
 	useEffect(() => {
-		const handleClickOutside = (e) => {
-			if (!e.target.closest(".dropdown-container")) {
+		const handleClickOutside = (e: MouseEvent) => {
+			if (!(e.target as HTMLElement).closest(".dropdown-container")) {
 				setActiveDropdown(null);
 			}
 		};
