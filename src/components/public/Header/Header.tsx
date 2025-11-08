@@ -12,6 +12,8 @@ const navLinks = [
 	{ title: "Questly", href: "/questly" },
 	{ title: "Earn Rewards", href: "/earn-rewards" },
 	{ title: "Collect Data", href: "/collect-data" },
+	{ title: "User Panel", href: "/user/home" },
+	{ title: "Client Panel", href: "/client/dashboard" },
 ];
 
 const Header = () => {
